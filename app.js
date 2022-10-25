@@ -18,9 +18,8 @@ function GetQuestions() {
       let QuestionsCount = QuestionsObject.length;
       createBullets(QuestionsCount);
       addData(QuestionsObject[current], QuestionsCount);
-      countdown(10, QuestionsCount);
+      countdown(60, QuestionsCount);
       submitButton.onclick = () => {
-     
         let theRightanswer = QuestionsObject[current].right_answer;
         current++;
         checkanswer(theRightanswer, countdownElement);
@@ -29,8 +28,8 @@ function GetQuestions() {
         addData(QuestionsObject[current], QuestionsCount);
 
         handleBullets();
-        clearInterval(countdownInterval)
-   countdown(10, QuestionsCount);
+        clearInterval(countdownInterval);
+        countdown(60, QuestionsCount);
         showresults(QuestionsCount);
       };
     }
@@ -143,7 +142,6 @@ function showresults(count) {
     resultsContainer.style.backgroundColor = "white";
     resultsContainer.style.marginTop = "10px";
     resultsContainer.style.height = "200px";
-    
   }
 }
 function countdown(duration, count) {
